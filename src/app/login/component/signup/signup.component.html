@@ -1,0 +1,103 @@
+<!-- <p-button class="btn btn-primary">Dropdown</p-button> -->
+<div class="frame frame-long">
+  
+  <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger close-btn" [routerLink]="'/'" style="float: right;"></button>
+  <h4>Register</h4>
+  <div>
+    <form [formGroup]='registerForm' (submit)="regSubmit()">
+      <div class="input-div row">
+        <div class="col-6">
+          <label for="firstname">First name</label><br />
+          <input class="form-styling" type="text" name="firstname" pInputText formControlName="first_name" />
+          <span class="text-danger" *ngIf="rval['first_name'].touched && (rval['first_name'].invalid || rval['first_name'].dirty)">
+            <span class="text-danger" *ngIf="rval['first_name'].hasError('required')">*Firstname is required</span>
+          </span>
+        </div>
+        <div class="col-6">
+          <label for="lastname">Last name</label><br />
+          <input
+            class="form-styling"
+            type="text"
+            name="lastname"
+            placeholder=""
+            pInputText
+            formControlName="last_name"
+          />
+          <span class="text-danger" *ngIf="rval['last_name'].touched && (rval['last_name'].invalid || rval['last_name'].dirty)">
+            <span class="text-danger" *ngIf="rval['last_name'].hasError('required')">*Lastname is required</span>
+          </span>
+        </div>
+      </div>
+      <div class="input-div">
+        <label for="email">Email</label><br />
+        <input
+          class="form-styling"
+          type="email"
+          name="email"
+          placeholder=""
+          pInputText
+          formControlName="email"
+        />
+        <span class="text-danger" *ngIf="rval['email'].touched && (rval['email'].invalid || rval['email'].dirty)">        
+          <span class="text-danger" *ngIf="rval['email'].hasError('required')">*Email is required</span>
+          <span class="text-danger" *ngIf="rval['email'].hasError('email')">*Enter valid Email ID</span>  
+        </span>
+      </div>
+      <div class="input-div">
+        <label for="number">Phone Number</label><br />
+        <input
+          class="form-styling"
+          type="text"
+          name="number"
+          placeholder=""
+          pInputText
+          formControlName="tel"
+          maxlength="10"
+          minlength="10"
+        />
+        <span class="text-danger" *ngIf="rval['tel'].touched && (rval['tel'].invalid || rval['tel'].dirty)">
+            <span class="text-danger" *ngIf="rval['tel'].hasError('required')">*Number is required</span>
+            <span class="text-danger" *ngIf="rval['tel'].hasError('minlength')">*Enter 10 digits number</span>
+            <span class="text-danger"  *ngIf="rval['tel'].hasError('pattern')">, Digits are valid</span>  
+          </span>
+      </div>
+      <div class="input-div">
+        <label for="date">Date of Birth</label><br />
+        <input
+          class="form-styling"
+          type="date"
+          name="date"
+          placeholder=""
+          pInputText
+          formControlName="birth"
+        />
+        <span class="text-danger" *ngIf="rval['birth'].touched && (rval['birth'].invalid || rval['birth'].dirty)">
+            <span class="text-danger" *ngIf="rval['birth'].hasError('required')">*Date of Birth is required</span>
+          </span>
+      </div>
+      <div class="input-div">
+        <label for="password">Password</label><br />
+        <input
+          class="form-styling"
+          type="password"
+          name="password"
+          placeholder=""
+          pInputText
+          formControlName="password"
+        />
+        <span class="text-danger" *ngIf="rval['password'].touched && (rval['password'].invalid || rval['password'].dirty)">
+            <span class="text-danger" *ngIf="rval['password'].hasError('required')">*Password is required</span>
+            <span class="text-danger" *ngIf="rval['password'].hasError('minlength')">*Password must be at least 6 characters</span>
+          </span>
+      </div>
+      
+      <p-button type="submit" [disabled]="!registerForm.valid">Signup</p-button>
+      <button pButton pRipple type="reset" icon="pi pi-refresh" (click)="onReset()" style="float: right;" class="p-button-rounded p-button-text text-light " style="float: right;"></button>
+  
+      
+    </form>
+    <span>Already an account: <a href="" [routerLink]="'/login'">Login </a></span>
+   
+    
+  </div>
+</div>

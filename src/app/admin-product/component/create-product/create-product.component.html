@@ -1,0 +1,54 @@
+<!-- <p-button class="btn btn-primary">Dropdown</p-button> -->
+<div class="frame frame-long">
+  <h4>Create New Product</h4>
+  <div>
+    <form class="">
+      <div class="row">
+        <div class="input-div col-6">
+          <label for="name">Product Title </label><br />
+          <input name="name" type="text" pInputText />
+        </div>
+        <div class="input-div col-6">
+          <label for="brand">Brand Name </label><br />
+          <input name="brand" type="text" pInputText />
+        </div>
+      
+      </div>
+      <div class="input-div">
+        <label for="brand">Upload Image</label>
+        <p-fileUpload
+          #fubauto
+          mode="basic"
+          name="demo[]"
+          url="./upload.php"
+          accept="image/*"
+          [auto]="true"
+          chooseLabel="Browse"
+        ></p-fileUpload>
+      </div>
+      <div class="input-div">
+        <label for="Size">Size </label><br />
+        <input name="size" type="text" pInputText />
+      </div>
+      <div class="input-div">
+        <label for="Color">Color </label><br />
+        <input name="Color" type="text" pInputText />
+      </div>
+      <div class="input-div">
+        <label for="quantity">Quantity </label><br />
+        <input name="quantity" type="text" pInputText />
+      </div>
+      <div class="input-div">
+        <label for="Price">Price </label><br />
+        <input name="Price" type="text" pInputText />
+      </div>
+      <div class="input-div">
+        <label for="category">Category </label><br />
+        <input name="category" type="text" pInputText />
+      </div>
+      <div class="input-div">
+        <button pButton pRipple type="button" label="Change Password" class="p-button-raised p-button-primary">submit</button>
+      </div>
+    </form>
+  </div>
+</div>

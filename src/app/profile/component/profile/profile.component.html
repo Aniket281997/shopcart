@@ -1,0 +1,27 @@
+<!-- <p-button class="btn btn-primary">Dropdown</p-button> -->
+<div class="frame frame-long">
+  
+  <h4>Personal Information</h4>
+  <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded text-primary" [routerLink]="'/'"></button>
+  <div>
+  <form [formGroup] ="userprofile">
+      <div class="input-div row">
+        <label for="firstname">Full name</label><br />
+        <input class="form-styling" type="text" name="firstname" pInputText class="fname" formControlName="first_name"/>
+        <input class="form-styling" type="text" name="lastname" pInputText formControlName="last_name" />
+      </div>
+      <div class="input-div">
+        <label for="email">Email</label><br />
+        <input class="form-styling" type="email" name="email" pInputText formControlName="email" />
+      </div>
+      <div class="input-div">
+        <label for="number">Phone Number</label><br />
+        <input class="form-styling" type="text" name="number" pInputText formControlName="tel"/>
+      </div>
+      </form> 
+      <div class="input-div"> 
+        <button pButton pRipple type="button" class="p-button-raised p-button-secondary" [routerLink]="'/change-psw'"> Change Password</button>
+      </div>
+    
+  </div>
+</div>

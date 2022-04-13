@@ -1,0 +1,33 @@
+<div class="frame frame-long" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger close-btn" [routerLink]="'/'" style="float: right;"></button>
+  <h4>Login</h4>
+  <div>
+    <form class="" [formGroup]='loginform' (submit)="loginsubmit()" >
+      <div class="input-div">
+        <label for="number">Phone Number</label><br />
+        <input
+          class="form-styling"
+          type="tel"
+          name="number"
+          placeholder=""
+          pInputText
+          formControlName="tel"
+        />
+      </div>
+      <div class="input-div">
+        <label for="password">Password</label><br />
+        <input
+          class="form-styling"
+          type="password"
+          name="password"
+          placeholder=""
+          pInputText
+          formControlName="password"
+        />
+      </div>
+      <p-button type="submit"  [disabled]="!loginform.valid" value="Submit">Login</p-button>
+    </form>
+    <span>Create an account: <a href="" [routerLink]="'/register'">Register</a></span>
+  </div>
+</div>

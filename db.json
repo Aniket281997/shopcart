@@ -1,0 +1,44 @@
+{
+  "register": [
+    {
+      "first_name": "aniket",
+      "last_name": "sadaphale",
+      "email": "aniket",
+      "tel": "7028732496",
+      "birth": "1997-09-28",
+      "password": "aniket97",
+      "role": "admin"
+    },
+    {
+      "first_name": "vicky",
+      "last_name": "kapure",
+      "email": "v@gmail.com",
+      "tel": "9989899776",
+      "birth": "2022-12-31",
+      "password": "vikay123",
+      "role": "customer",
+      "id": 1
+    },
+     {
+      "first_name": "omkar",
+      "last_name": "Jagtap",
+      "email": "omkar@gmail.com",
+      "tel": "8999656565",
+      "birth": "2022-12-31",
+      "password": "omkar123",
+      "role": "customer",
+      "id": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "product": [
+    
+  
+  ]
+}

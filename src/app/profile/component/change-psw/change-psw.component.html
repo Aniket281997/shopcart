@@ -1,0 +1,30 @@
+<!-- <p-button class="btn btn-primary">Dropdown</p-button> -->
+<div class="frame frame-long">
+  <h4>Change Password</h4>
+  <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded text-primary" [routerLink]="'/profile'"></button>
+  <div>
+    <form [formGroup]="formval">
+      <div class="input-div">
+        <span class="p-float-label">
+          <input id="float-input" type="text" pInputText formControlName="old_psw"/>
+          <label for="float-input">Current Password</label>
+        </span>
+      </div>
+      <div class="input-div">
+        <span class="p-float-label">
+          <input id="float-input" type="password" pInputText formControlName="new_psw"/>
+          <label for="float-input">New Password</label>
+        </span>
+      </div>
+      <div class="input-div">
+        <span class="p-float-label">
+          <input id="float-input" type="password" pInputText formControlName="confirm_psw"/>
+          <label for="float-input">Retype New Password</label>
+        </span>
+      </div>
+      <div class="input-div">
+        <button pButton pRipple type="submit" value="submit" label="Change Password" class="p-button-raised p-button-primary"></button>
+      </div>
+    </form>
+  </div>
+</div>
