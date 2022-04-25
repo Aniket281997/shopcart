@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,14 @@ import { Injectable } from '@angular/core';
 })
 export class CheckoutServiceService {
 
-  constructor() { }
+  constructor(
+    private httpclient:HttpClient
+  ) { }
+
+  getWishlist(){
+    return this.httpclient.get(`/products`)
+  }
+  putProduct(id:any,data:any){
+    return this.httpclient.put(`/products/${id}`,data)
+  }
 }

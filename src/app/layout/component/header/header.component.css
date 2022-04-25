@@ -1,11 +1,6 @@
-/* UTILITIES */
 * {
  margin: 0;
  padding: 0;
- box-sizing: border-box;
-}
-body {
- font-family: cursive;
 }
 a {
  text-decoration: none;
@@ -13,12 +8,8 @@ a {
 li {
  list-style: none;
 }
-
-
-/* NAVBAR STYLING STARTS */
 .subnav{
-    background-color: #0d6efd;
-    
+    background-color: #0d6efd  
 }
 .navbar {
  display: flex;
@@ -26,7 +17,7 @@ li {
  justify-content: space-between;
 padding: 10px;
  color: #fff;
-     width: 80%;
+ width: 80%;
     margin: 0 auto;
 }
 .nav-links a {
@@ -55,7 +46,7 @@ i.fa.fa-search {
  transition: 0.3s ease;
 }
 .menu li {
- padding: 5px 14px;
+ padding: 5px;
 }
 /* DROPDOWN MENU */
 .services {
@@ -72,14 +63,11 @@ ul.dropdown {
 .dropdown {
  background-color: #0d6efd;
  padding: 1em 0;
- position: absolute; /*WITH RESPECT TO PARENT*/
+ position: absolute;
  display: none;
  border-radius: 8px;
  top: 35px;
 }
-/* .dropdown li + li {
- margin-top: 10px;
-} */
 .dropdown li {
  padding: 0.5em 1em;
  width: 8em;

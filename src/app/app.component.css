@@ -1,0 +1,7 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.sidebar-border{
+    border-right: 1px #dee2e6 solid;
+}

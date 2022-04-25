@@ -1,1 +1,24 @@
-<p>category-list works!</p>
+<div class="container">
+    <create-category ></create-category>
+
+    <div class="row">
+        
+    <p-table responsiveLayout="scroll" style="width:87%">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Id</th>
+            <th>Category</th>
+            <th> <button pButton pRipple type="button" (click)="categories()" class="p-button-text" style="float: right;margin-right: 75px;"><i class="pi pi-refresh"></i></button>
+        </th>
+        </tr>
+        <tr *ngFor="let category of showcategory ">
+            <td>{{category.id}}</td> 
+            <td>{{category.category}}</td> 
+            <td >
+                <button pButton pRipple  type="button" (click)="delCategory(category.id)" icon="pi pi-trash" class="p-button-text" style="float: right; margin-right: 80px;" class="p-button-rounded p-button-danger p-button-text"></button>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+</div>
+</div>

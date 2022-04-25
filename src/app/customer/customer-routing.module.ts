@@ -4,8 +4,8 @@ import { AllOrdersComponent } from './component/all-orders/all-orders.component'
 import { CustomerListComponent } from './component/customer-list/customer-list.component';
 
 const routes: Routes = [
-  {path:'customer-list',component:CustomerListComponent},
-  {path:'all-order', component:AllOrdersComponent}
+  {path:'list',component:CustomerListComponent},
+  {path:'orders', component:AllOrdersComponent}
 ];
 
 @NgModule({

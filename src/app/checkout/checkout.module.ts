@@ -5,6 +5,7 @@ import { CheckoutRoutingModule } from './checkout-routing.module';
 import { CartComponent } from './component/cart/cart.component';
 import { FavoriteComponent } from './component/favorite/favorite.component';
 import { MyOrderComponent } from './component/my-order/my-order.component';
+import { SharedModule } from '../shared/shared/shared.module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { MyOrderComponent } from './component/my-order/my-order.component';
   ],
   imports: [
     CommonModule,
-    CheckoutRoutingModule
+    CheckoutRoutingModule,
+    SharedModule
   ]
 })
 export class CheckoutModule { }

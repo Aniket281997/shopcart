@@ -12,11 +12,14 @@ import { NgToastService } from 'ng-angular-popup';
 })
 export class SignupComponent implements OnInit {
   registerForm!: FormGroup;
+  verifyTel:any
+  telError:any
   constructor(private http:HttpClient, private service:LoginServiceService, 
     private fb:FormBuilder, private ngtoast:NgToastService,
     private router:Router) {}
 
   ngOnInit(): void {
+    this.getVerify()
     this.registerForm = this.fb.group (
       {
         first_name : ['',Validators.compose([Validators.required,Validators.pattern('^[a-zA-Z]+$')]) ],
@@ -25,20 +28,32 @@ export class SignupComponent implements OnInit {
         tel : ['',Validators.compose([Validators.required,Validators.minLength(10),Validators.pattern('^[0-9]*$')])],
         birth : ['',Validators.required],
         password : ['',Validators.compose([ Validators.required,Validators.minLength(6)])],
-        role:['customer']
+        role:['customer'],
+        status:['unblock']
       }
     )
   }
  get rval() { return this.registerForm.controls}
-
-  regSubmit(){
-    this.service.getRegister(this.registerForm.value).subscribe((res:any)=>{
-      this.registerForm.reset()
+  getVerify(){
+    this.service.getlogin().subscribe((res:any)=>(
+      this.verifyTel =res)
+    )
+  }  
+  regSubmit(registerForm:any){
+    const index = this.verifyTel.findIndex(
+      (ele:any)=> ele.tel === this.registerForm.value.tel
+    )
+    if(index === -1){
+      this.service.postRegister(this.registerForm.value).subscribe((res:any)=>{
+      this.registerForm.reset() 
       this.ngtoast.success({detail:"SUCCESS",summary:'Registeration Success',duration:2000});
       this.router.navigate(['/login'])
-    })
+      })
+    }else{
+      this.telError ='*Number Already Exist'
+    }
   }
-  onReset() {
+onReset() {
         this.registerForm.reset();
     }
 }

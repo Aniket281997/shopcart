@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   profileval:any = localStorage.getItem('profile')
-  constructor() { }
+  customerId:any = localStorage.getItem('id')
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
     
@@ -18,6 +20,8 @@ export class HeaderComponent implements OnInit {
   }
   logout(){
     localStorage.clear()
+    this.router.navigate(['/']);
+    
   }
   profile(){
     this.profileval

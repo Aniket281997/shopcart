@@ -9,6 +9,10 @@ import { FileUploadModule } from 'primeng/fileupload';
 import { HttpClientModule } from '@angular/common/http';
 import {TableModule} from 'primeng/table';
 import {DropdownModule} from 'primeng/dropdown';
+import {ToggleButtonModule} from 'primeng/togglebutton';
+import {DataViewModule} from 'primeng/dataview';
+import {OrderListModule} from 'primeng/orderlist';
+
 @NgModule({
   declarations: [],
   imports: [
@@ -21,7 +25,10 @@ import {DropdownModule} from 'primeng/dropdown';
     FileUploadModule,
     HttpClientModule,
     TableModule,
-    DropdownModule
+    DropdownModule,
+    ToggleButtonModule,
+    DataViewModule,
+    OrderListModule
   ],
   exports: [
     AccordionModule,
@@ -32,7 +39,10 @@ import {DropdownModule} from 'primeng/dropdown';
     FileUploadModule,
     HttpClientModule,
     TableModule,
-    DropdownModule
+    DropdownModule,
+    ToggleButtonModule,
+    DataViewModule,
+    OrderListModule
   ],
 })
 export class PrimengModule {}

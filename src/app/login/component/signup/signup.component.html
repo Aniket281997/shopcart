@@ -4,7 +4,7 @@
   <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger close-btn" [routerLink]="'/'" style="float: right;"></button>
   <h4>Register</h4>
   <div>
-    <form [formGroup]='registerForm' (submit)="regSubmit()">
+    <form [formGroup]='registerForm' (submit)="regSubmit(registerForm)">
       <div class="input-div row">
         <div class="col-6">
           <label for="firstname">First name</label><br />
@@ -60,6 +60,7 @@
             <span class="text-danger" *ngIf="rval['tel'].hasError('minlength')">*Enter 10 digits number</span>
             <span class="text-danger"  *ngIf="rval['tel'].hasError('pattern')">, Digits are valid</span>  
           </span>
+          <span class="text-danger">{{telError}}</span>
       </div>
       <div class="input-div">
         <label for="date">Date of Birth</label><br />

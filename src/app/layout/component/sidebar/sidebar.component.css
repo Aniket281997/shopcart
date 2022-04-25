@@ -1,38 +1,12 @@
-/* .admin {
-  height: unset;
-  padding: 20px;
-}
-.button-nav {
-  color: black;
-  text-decoration: none;
-}
-.customer ul li {
-
-/* Basic CSS Reset */
-* {
-  margin: 0;
-  padding: 0;
-}
-html {
-  box-sizing: border-box;
-}
-
-/* Sidebar */
 .sidebar {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: stretch;
   margin:20px 5px;
   gap: 15px;
 }
 .side-btn{
-  display: block;
-  background-color: #2196f3;
   cursor: pointer;
   text-align: center;
-}
-.p-ripple{
-  width: 100%;
-  display: block;
+  width:100% !important;
 }

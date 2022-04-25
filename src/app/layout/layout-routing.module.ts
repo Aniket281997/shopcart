@@ -4,14 +4,11 @@ import { SidebarComponent } from './component/sidebar/sidebar.component';
 import { HeaderComponent } from './component/header/header.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthenticationGuard } from '../shared/authguard/authentication.guard';
 
 const routes: Routes = [
-  // {path:'',component:HeaderComponent},
-  // {path:'',component:SidebarComponent},
-  // { path: '', component: FooterComponent },
-  // { path: '', component: HomeComponent },
+  {path:'dashboard',component:HomeComponent}
 ];
-
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],

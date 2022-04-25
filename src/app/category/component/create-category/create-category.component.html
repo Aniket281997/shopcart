@@ -1,1 +1,19 @@
-<p>create-category works!</p>
+ 
+    <div class="row first">
+        <h4>Categories</h4>
+        <div class="col-9">
+            <form [formGroup]="addCategory" (submit)="createCategory()">
+                <div class="row">
+                    <div class="col-10">
+                        <input type="text" placeholder="Add category" pInputText formControlName ="category"/>
+                    </div>
+                    <div class="col-1" style="padding-left: 45px;">
+                         <button pButton pRipple type="submit" [disabled]="!addCategory.valid" class="p-button-text"><i class="pi pi-plus"></i>add</button>
+                        </div>
+                </div>   
+            </form>     
+        </div>
+        <div class="col-2" style="float: right; visibility: hidden;">
+            <button pButton pRipple type="button" (click)="onrefresh()" class="p-button-text"><i class="pi pi-refresh"></i>Refresh</button>
+        </div>
+    </div>

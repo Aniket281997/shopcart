@@ -1,1 +1,28 @@
-<p>product-show works!</p>
+<main>
+    <div class="container-fluid bg-trasparent my-4 p-3" style="position: relative;">
+        <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3" >
+            <div class="col" *ngFor="let product of products">
+                <div class="card h-100 shadow-sm"> 
+                    <img [routerLink]="['/product', product.id,]" src="https://www.freepnglogos.com/uploads/notebook-png/download-laptop-notebook-png-image-png-image-pngimg-2.png" class="card-img-top" alt="...">
+                    <div class="label-top-left">
+                        <i class="pi pi-tag product-category-icon"></i>
+                        <span class="product-category">{{product.product_category}}</span>
+                    </div>
+                    <div class="label-top">
+                        <button pButton pRipple type="button" (click)="likedProduct(product)" [icon]= likeIds class="p-button-rounded p-button-danger p-button-text"></button>
+                    </div>
+                    <div class="card-body" >
+                        <div class="clearfix mb-3" [routerLink]="['/product', product.id,]"> 
+                            <span class="float-start badge rounded-pill bg-primary">{{product.product_brand}}</span> 
+                            <span class="float-end price-hp">{{product.product_price}}</span> 
+                        </div>
+                        <h6 class="card-title">{{product.product_title}}</h6>
+                        <div class="text-center my-4"> 
+                            <!-- <a (click)="addtoCart(customerId,)" class="btn btn-warning">Add to Cart</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

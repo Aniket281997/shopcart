@@ -1,17 +1,21 @@
 <div class="grid">
   <aside class="sidebar" *ngIf="adminsSidebar()">
     <div>
-      <p-button class ="side-btn" [routerLink]="'/product-list'" label="Product List"></p-button>
+      <p-button class ="side-btn" [routerLink]="'/dashboard'" label="Dashboard"></p-button>
     </div>
     <div>
-     <p-button class ="side-btn" [routerLink]="'/customer-list'" label="Customer List"></p-button>
+      <p-button class ="side-btn" [routerLink]="'/category-list'" label="Categories"></p-button>
     </div>
     <div>
-      <p-button class ="side-btn" label="Order List"></p-button>
+      <p-button class ="side-btn" [routerLink]="'/product-list'" label="Products"></p-button>
     </div>
     <div>
-      <p-button class ="side-btn"[routerLink]="'/'" label="Categories"></p-button>
+     <p-button class ="side-btn" [routerLink]="'/customer-list'" label="Customers"></p-button>
     </div>
+    <div>
+      <p-button class ="side-btn" label="Orders"></p-button>
+    </div>
+    
   </aside>
   <aside class="customer-sidebar">
     <div>

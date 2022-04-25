@@ -1,1 +1,19 @@
-<p>favorite works!</p>
+<div class="temp container">
+    <h4 class="header">My Wishlist</h4>
+    <div class="product row" *ngFor="let product of products">
+        <div class="image-container col-2">
+            <img src="https://www.freepnglogos.com/uploads/notebook-png/download-laptop-notebook-png-image-png-image-pngimg-2.png" [alt]="product.name" class="product-image" />
+        </div>
+        <div class="product-list-detail col-9">
+            <h5 class="mb-2">{{product.product_title}}</h5>
+            <i class="pi pi-tag product-category-icon"></i>
+            <span class="product-category">{{product.product_category}}</span>
+        </div>
+        <div class="product-list-action col-1">
+            <h6 class="mb-2">₹{{product.product_price}}</h6>
+            <a class="del" styleClass="p-button-link" (click)="deleteProduct(product)"><i class="pi pi-trash"></i></a>
+        </div>
+    </div>
+</div>
+     
+           

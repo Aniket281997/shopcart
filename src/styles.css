@@ -1,3 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
  @import "~bootstrap/dist/css/bootstrap.min.css";
  
+ /* Primeng css */
+ .sidebar .p-ripple.p-element.p-button.p-component{
+     width: 100%;
+     display: block;
+ }
+ .create-product .p-dropdown.p-component {
+    width: 100%;
+}
+.create-product span.p-inputnumber.p-component {
+    width: 100%;
+}

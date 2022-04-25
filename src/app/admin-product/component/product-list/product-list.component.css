@@ -1,3 +1,9 @@
 p-button.p-element.add-btn {
     float: right;
 }   
+.del{
+    visibility: hidden;
+}
+td {
+    padding: 0px 20px;
+}

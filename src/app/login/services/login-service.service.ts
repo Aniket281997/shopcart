@@ -7,11 +7,14 @@ import { Injectable } from '@angular/core';
 export class LoginServiceService {
 
   constructor( private http: HttpClient) { }
-  getRegister(data:any){
-    return this.http.post('/register',data);
+  postRegister(data:any){
+    // let body = {
+    //   "data" : data
+    // }
+    return this.http.post('/registers',data);
   }
-  postlogin(){
-    return this.http.get('/register');
+  getlogin(){
+    return this.http.get('/registers');
   }
 
 }

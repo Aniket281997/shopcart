@@ -8,6 +8,9 @@ export class CustomerServiceService {
 
   constructor( private httpclient:HttpClient) { }
    getcustomerList(){
-    return this.httpclient.get('/register');
+    return this.httpclient.get('/registers');
+  }
+  putStatus(data:any, id:any){
+    return this.httpclient.put(`/registers/${id}`,data)
   }
 }

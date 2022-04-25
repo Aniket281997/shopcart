@@ -1,71 +1,69 @@
-<!-- <p-button class="btn btn-primary">Dropdown</p-button> -->
 <div class="frame create-product frame-long">
   <div class="row">
     <div class="col-11">
-      <h4 style="margin-left: -9px;">Create New Product</h4>
-      <!-- <h4 *ngIf="!isAddid" style="margin-left: -9px;">Edit Product</h4> -->
+      <h4 style="margin-left: -9px;">Edit Product</h4>
     </div>
     <div class="col-1">
        <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded text-primary bg-light" [routerLink]="'/product-list'"></button>
     </div>
   </div>
   <div>
-    <form class="" [formGroup]="newproduct" (submit)="addProduct()">
+    <form class="" [formGroup]="newproduct" (submit)="editProduct(editId,newproduct)">
       <div class="row">
         <div class="input-div col-6">
           <label for="name">Product Title </label>
           <input name="name" type="text" pInputText formControlName ="product_title" placeholder="Product title"/>
-          <span class="text-danger" *ngIf="prodval['product_title'].touched && (prodval['product_title'].invalid || prodval['product_title'].dirty)">
+          <!-- <span class="text-danger" *ngIf="prodval['product_title'].touched && (prodval['product_title'].invalid || prodval['product_title'].dirty)">
             <span class="text-danger" *ngIf="prodval['product_title'].hasError('required')">*Product title is required</span>
-          </span>
+          </span> -->
         </div>
         <div class="input-div col-6">
           <label for="brand">Brand Name </label>
           <input name="brand" type="text" pInputText formControlName="product_brand" placeholder="Brand name" />
-          <span class="text-danger" *ngIf="prodval['product_brand'].touched && (prodval['product_brand'].invalid || prodval['product_brand'].dirty)">
+          <!-- <span class="text-danger" *ngIf="prodval['product_brand'].touched && (prodval['product_brand'].invalid || prodval['product_brand'].dirty)">
             <span class="text-danger" *ngIf="prodval['product_brand'].hasError('required')">*Brand is required</span>
-          </span>
+          </span> -->
         </div>
       </div>
       <div class="row">
         <div class="input-div col-6">
           <label for="category">Category </label>
           <p-dropdown name="category" [options]="categoryAll"  placeholder="Select a Category" formControlName="product_category"></p-dropdown>
-           <span class="text-danger" *ngIf="prodval['product_category'].touched && (prodval['product_category'].invalid || prodval['product_category'].dirty)">
+           <!-- <span class="text-danger" *ngIf="prodval['product_category'].touched && (prodval['product_category'].invalid || prodval['product_category'].dirty)">
             <span class="text-danger" *ngIf="prodval['product_category'].hasError('required')">*Category is required</span>
-          </span>
+          </span> -->
         </div>
         <div class="input-div col-6">
           <label for="Size">Size </label>
           <p-dropdown name="Size" [options]="size" placeholder="Select a size" formControlName="product_size"></p-dropdown>
-           <span class="text-danger" *ngIf="prodval['product_size'].touched && (prodval['product_size'].invalid || prodval['product_size'].dirty)">
+           <!-- <span class="text-danger" *ngIf="prodval['product_size'].touched && (prodval['product_size'].invalid || prodval['product_size'].dirty)">
             <span class="text-danger" *ngIf="prodval['product_size'].hasError('required')">*Size is required</span>
-          </span>
+          </span> -->
         </div>
       </div>
       <div class="row">
         <div class="col-6 input-div">
           <label for="Color">Color </label>
           <p-dropdown name="Color" [options]="color" placeholder="Select a color" formControlName="product_color"></p-dropdown>
-          <span class="text-danger" *ngIf="prodval['product_color'].touched && (prodval['product_color'].invalid || prodval['product_color'].dirty)">
+          <!-- <span class="text-danger" *ngIf="prodval['product_color'].touched && (prodval['product_color'].invalid || prodval['product_color'].dirty)">
             <span class="text-danger" *ngIf="prodval['product_color'].hasError('required')">*Color is required</span>
-          </span>
+          </span> -->
         </div>
         <div class="col-6 input-div">
           <label for="quantity">Quantity </label>
           <p-dropdown [options]="quantity" placeholder="Select quantity" [editable]="true" formControlName="product_qty"></p-dropdown>
-           <span class="text-danger" *ngIf="prodval['product_qty'].touched && (prodval['product_qty'].invalid || prodval['product_qty'].dirty)">
+           <!-- <span class="text-danger" *ngIf="prodval['product_qty'].touched && (prodval['product_qty'].invalid || prodval['product_qty'].dirty)">
             <span class="text-danger" *ngIf="prodval['product_qty'].hasError('required')">*Quantity is required</span>
-          </span>
+          </span> -->
         </div>
       </div>
       <div class="row">
         <div class="input-div col-6">
           <label for="Price">Price </label>
           <p-inputNumber name="Price" mode="decimal" locale="en-IN" [minFractionDigits]="2" formControlName="product_price"></p-inputNumber>
-           <span class="text-danger" *ngIf="prodval['product_price'].touched && (prodval['product_price'].invalid || prodval['product_price'].dirty)">
+           <!-- <span class="text-danger" *ngIf="prodval['product_price'].touched && (prodval['product_price'].invalid || prodval['product_price'].dirty)">
             <span class="text-danger" *ngIf="prodval['product_price'].hasError('required')">*Price is required</span>
-          </span>
+          </span> -->
         </div>
         <!-- <div class="input-div col-6">
           <label for="brand">Upload Image</label>
@@ -76,8 +74,7 @@
         </div> -->
       </div>
       <div class="button">
-        <button pButton pRipple type="button" type="submit" [disabled]="!newproduct.value" class="p-button-raised p-button-primary" >Add Product</button>
-        <!-- <button pButton pRipple type="button" type="submit" class="p-button-raised p-button-primary" *ngIf="!isAddid">Update</button> -->
+        <button pButton pRipple type="button" type="submit" class="p-button-raised p-button-primary" >Update</button>
       </div>
     </form>
   </div>

@@ -1,1 +1,30 @@
-<p>product-details works!</p>
+<div class="container">
+    <div class="row main">
+        <div class="col-7 left-column" >
+            
+            <div class="image-box">
+                <div class="label-top">
+                    <!-- <i class="pi pi-heart"></i> -->
+                    <button style="float: right;" pButton pRipple type="button" (click)="likedProduct(products)" [icon]= likeIds class="p-button-rounded p-button-danger p-button-text"></button>
+                    <!-- <i class="pi pi-heart-fill"></i> -->
+                </div>
+                <img src="https://www.freepnglogos.com/uploads/notebook-png/download-laptop-notebook-png-image-png-image-pngimg-2.png" class="card-img-top" alt="...">  
+                
+            </div>
+             
+          </div>
+        <div class="col-5 right-column">
+            <button pButton pRipple type="button" [routerLink]="'/'" icon="pi pi-times" style="float: right; margin:-20px 20px;" class="p-button-rounded p-button-danger p-button-outlined"></button>
+            <p class="category">{{products.product_category}}</p>
+            <h1>{{products.product_title}}</h1>
+            <h4>{{products.product_brand}}</h4>
+            <p class="text-danger">Hurry up only {{products.product_qty}} left!</p>
+            <p>{{products.product_color}}</p>
+            <p>{{products.product_size}}</p>
+            <h3>₹{{products.product_price}}</h3>
+            <div class="buttons">
+                <button class="btn btn-warning">Add to cart</button>
+            </div>
+        </div>
+    </div>
+</div>

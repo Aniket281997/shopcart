@@ -1,0 +1,9 @@
+.row{
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+td {
+    padding: 5px 20px;
+}

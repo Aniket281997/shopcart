@@ -1,5 +1,5 @@
 {
-  "register": [
+  "registers": [
     {
       "first_name": "aniket",
       "last_name": "sadaphale",
@@ -37,7 +37,7 @@
       "postId": 1
     }
   ],
-  "product": [
+  "products": [
     
   
   ]

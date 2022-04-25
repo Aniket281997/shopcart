@@ -13,18 +13,18 @@
  <ul class="nav-links">
  <!-- NAVIGATION MENUS -->
  <div class="menu">
- <li><button pButton pRipple type="button" onclick="profile()" label="Login" class="login-btn p-button-raised bg-light p-button-text" [routerLink]="'/login'" *ngIf="!loggin()"></button></li>
+ <li><button pButton pRipple type="button" click="profile()" label="Login" class="login-btn p-button-raised bg-light p-button-text" [routerLink]="'/login'" *ngIf="!loggin()"></button></li>
  <li class="services">
  <a *ngIf="loggin()">{{profileval}}</a>
  <!-- DROPDOWN MENU -->
  <ul class="dropdown">
- <li><a [routerLink]="'/profile'"><i class="pi pi-user" style="margin-right: 10px;"></i>Profile</a></li>
- <li><a href="/">My Orders</a></li>
+ <li><a routerLink="/profile"><i class="pi pi-user" style="margin-right: 10px;"></i>Profile</a></li>
+ <li><a>My Orders</a></li>
  <li><a (click)="logout()"><i class="pi pi-sign-out" style="margin-right: 10px;" ></i>Logout</a></li>
  </ul>
  </li>
- <li><a ><i class="fa fa-shopping-cart" aria-hidden="true" style="margin-right: 05px;" ></i>Cart</a></li>
- <li><a href="/"> <i class="fa fa-heart-o" aria-hidden="true" style="margin-right: 05px;"></i>Liked </a></li>
+ <li><a [routerLink]="['/viewcart',customerId]" ><i class="fa fa-shopping-cart" aria-hidden="true" style="margin-right: 05px;" ></i>Cart</a></li>
+ <li><a [routerLink]="['/fav',customerId]"> <i class="fa fa-heart-o" aria-hidden="true" style="margin-right: 05px;"></i>Liked </a></li>
  </div>
  </ul>
  </div>

@@ -11,14 +11,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-   loginform!: FormGroup   
+  loginform!: FormGroup   
   newrole:any
   profileName:any
   userid:any
-  constructor(private service:LoginServiceService, private httpclient:HttpClient,
-              private router:Router, private fb:FormBuilder,
-              private ngtoast:NgToastService) { }
-
+  customerStatus:any
+  constructor(
+    private service:LoginServiceService,
+    private httpclient:HttpClient,
+    private router:Router, private fb:FormBuilder,
+    private ngtoast:NgToastService
+  ) { }
   ngOnInit(): void {
     this.loginform = this.fb.group({
       tel: ['',Validators.required],
@@ -26,28 +29,35 @@ export class LoginComponent implements OnInit {
     })
   }
   loginsubmit(){
-    this.service.postlogin().subscribe((res:any) =>{
+    this.service.getlogin().subscribe((res:any) =>{
       const user = res.find((logindata:any) =>{
          this.newrole = logindata.role
          this.profileName = logindata.first_name
          this.userid = logindata.id
+         this.customerStatus = logindata.status
         return (
-          logindata.tel === this.loginform.value.tel && logindata.password === this.loginform.value.password
+          logindata.tel === this.loginform.value.tel && logindata.password === this.loginform.value.password && logindata.status === "unblock"
         )
         
       })
         if(user){
           if(this.newrole =='customer'){
-            this.ngtoast.success({detail:"SUCCESS",summary:'Login Success',duration:2000});
-            this.router.navigate(['/'])
-            localStorage.setItem('role',this.newrole)
-            localStorage.setItem('profile',this.profileName)
-            localStorage.setItem('id',this.userid)
+            if(this.customerStatus =='unblock'){
+              this.ngtoast.success({detail:"SUCCESS",summary:'Login Success',duration:2000});
+              this.router.navigate(['/home'])
+              localStorage.setItem('role',this.newrole)
+              localStorage.setItem('profile',this.profileName)
+              localStorage.setItem('id',this.userid)
+              this.loginform.reset()
+            }else{
+              this.ngtoast.error({detail:"ERROR",summary:'Your Account has been blocked',duration:2000});
+            }
           }else{
             this.ngtoast.success({detail:"SUCCESS",summary:'Login Success',duration:2000});
-            this.router.navigate(['/product-list'])
+            this.router.navigate(['/dashboard'])
             localStorage.setItem('role',this.newrole)
             localStorage.setItem('profile',this.profileName)
+            this.loginform.reset()
           }
         } else{       
           this.ngtoast.error({detail:"ERROR",summary:'Please enter valid number and password',duration:2000});
