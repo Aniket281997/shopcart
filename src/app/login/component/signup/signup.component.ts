@@ -14,6 +14,7 @@ export class SignupComponent implements OnInit {
   registerForm!: FormGroup;
   verifyTel:any
   telError:any
+  
   constructor(private http:HttpClient, private service:LoginServiceService, 
     private fb:FormBuilder, private ngtoast:NgToastService,
     private router:Router) {}
@@ -29,7 +30,7 @@ export class SignupComponent implements OnInit {
         birth : ['',Validators.required],
         password : ['',Validators.compose([ Validators.required,Validators.minLength(6)])],
         role:['customer'],
-        status:['unblock']
+        status:['unblock'],
       }
     )
   }

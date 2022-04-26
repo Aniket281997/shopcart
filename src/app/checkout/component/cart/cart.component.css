@@ -1,15 +1,58 @@
 .card{
     margin: 10px;
+    border-radius: 0%;
 }
 .header{
-    padding: 10px;
-    background-color: rgba(221, 221, 221, 0.63);
-    margin: 0px;
+   margin: -12px;
+    padding: 15px 0px 8px 15px;
+    border-bottom: #ddd 1px solid;
 }
 .col-8.card {
     width: 63%;
 }
 .payment{
     padding: 10px;
-    background-color: rgba(221, 221, 221, 0.2);
+    background-color: rgba(221, 221, 221, 0.1);
+}
+.border{
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: -11px;
+}
+.pri{
+    text-transform: uppercase;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.5);  
+}
+.second{
+    border-bottom: 1px dotted #ddd;
+    margin: 10px 0px;
+    padding: 10px 0px;
+}
+.third{ 
+    border-bottom: 1px dotted #ddd;
+    margin:0px;
+    padding-bottom: 10px;
+}
+.row.main {
+    margin: 15px 0;
+    border: 1px solid #ddd;
+}
+img.product-image {
+    width: 100%;
+    padding: 10px;
+}
+.del{
+    cursor: pointer;
+    color: rgba(12, 12, 12, 0.445);
+    font-size: 20px;
+}
+i.pi.pi-trash {
+    font-size: 20px;
+    font-weight: bold;
+}
+h6{
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.5);  
+    font-size: 20px;
 }

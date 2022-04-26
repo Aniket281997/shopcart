@@ -40,7 +40,6 @@ products:any =[]
     }
     this.checkoutService.putProduct(obj.id,obj).subscribe((a:any)=>{    
     })
-    this.showFav
   }
 
 }

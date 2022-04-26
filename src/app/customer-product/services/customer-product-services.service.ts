@@ -22,4 +22,9 @@ export class CustomerProductServicesService {
   patchCustomer(id:any,data:any){
     return this.httpclient.patch(`/registers/${id}`,data)
   }
+  postCart(data:any){
+    console.log("ft",data);
+    
+    return this.httpclient.post(`/addcart`,data)
+  }
 }

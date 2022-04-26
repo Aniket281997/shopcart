@@ -16,4 +16,7 @@ export class CheckoutServiceService {
   putProduct(id:any,data:any){
     return this.httpclient.put(`/products/${id}`,data)
   }
+  getCartprod(){
+    return this.httpclient.get(`/addcart`)
+  }
 }

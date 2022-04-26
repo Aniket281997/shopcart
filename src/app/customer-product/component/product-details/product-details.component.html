@@ -23,7 +23,7 @@
             <p>{{products.product_size}}</p>
             <h3>₹{{products.product_price}}</h3>
             <div class="buttons">
-                <button class="btn btn-warning">Add to cart</button>
+                <button class="btn btn-warning" (click)="addtoCart(products)">Add to cart</button>
             </div>
         </div>
     </div>

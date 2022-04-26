@@ -20,6 +20,7 @@ newproduct!:FormGroup
 uploadedFiles: any;
 editId:any
 isAddid!:boolean
+arr:any[]=["0"]
   constructor(
     private httpclient:HttpClient, 
     private service:AdminProductServicesService,
@@ -39,6 +40,7 @@ isAddid!:boolean
           product_color:['',Validators.required],
           product_qty:['',Validators.required],
           product_price:['',Validators.required],
+          liked_by:[this.arr]
           // product_img:[this.uploadedFiles,Validators.required]
         })
         this.categoryShow()
