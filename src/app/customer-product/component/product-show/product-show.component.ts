@@ -39,8 +39,9 @@ export class ProductShowComponent implements OnInit {
   displayProduct(){
       this.productservice.getProduct().subscribe((res:any)=>{
         this.products =res 
-        const findC = res.filter((ele:any)=>{  
-          let likes = ele.liked_by.filter((fruit =ele.liked_by)=> fruit == this.customerId)
+        const findC = res.filter((ele:any)=>{    
+          let likes = ele.liked_by.findIndex((fruit =ele.liked_by)=> fruit == this.customerId)
+          console.log(likes,'likes'); 
           if(likes.length === 0){ 
             this.likeIds = 'pi pi-heart'
           }else{
@@ -62,7 +63,8 @@ export class ProductShowComponent implements OnInit {
     })
   } 
   addtoCart(obj:any){
-
+    console.log(obj.product_price);
+    
     this.addCart.product.push({
         prodid:obj.id,
         name:obj.product_title,
@@ -71,11 +73,12 @@ export class ProductShowComponent implements OnInit {
         size:obj.product_size,
         color:obj.product_color,
         price:obj.product_price,
-        qty:1
-      });
+        qty:1,
+        total_price:obj.product_price
+      });   
     this.productservice.postCart(this.addCart).subscribe((res:any)=>{  
-      this.ngtoast.success({detail:"SUCCESS",summary:'Added to cart',duration:2000});
-      alert('added to cart')
+     this.ngtoast.success({detail:"SUCCESS",summary:'Added to cart',duration:2000});
+      this.router.navigate([`/viewcart/${this.customerId}`])
     })
   }
 

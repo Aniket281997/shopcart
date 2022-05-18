@@ -2,15 +2,21 @@
     <div class="row ">
         <div class="col-8 card">
             <h4 class="header">My Cart</h4> 
-            <div class="row main">
+            <div class="row main" *ngFor=" let product of cartProducts">
                 <div class="col-3 image-container">
-                     <img src="https://www.freepnglogos.com/uploads/notebook-png/download-laptop-notebook-png-image-png-image-pngimg-2.png"  class="product-image" />
+                    <img src="https://www.freepnglogos.com/uploads/notebook-png/download-laptop-notebook-png-image-png-image-pngimg-2.png"  class="product-image" />
+                    	<div class="qty">
+                            <button class="button" (click)="decrement(product)" class="qtyminus" aria-hidden="true">&minus;</button>
+                            <!-- <input type="number" name="qty" id="qty" min="1" max="10" step="1" value="1"> -->
+                            <h6 class="counting">{{product.qty}}</h6>
+                            <button class="button" (click)="increment(product)" class="qtyplus" aria-hidden="true">&plus;</button>
+                        </div>   
                 </div>
                 <div class="col-8" style="padding: 5px;">
-                    <h6><span>Brand </span>Name</h6>
-                    <p>Size</p>
-                    <p>Color</p>
-                    <h6>Price</h6>
+                    <h6><span>{{product.brand}} </span>{{product.name}}</h6>
+                    <p>Size: {{product.size}}</p>
+                    <p>Color: {{product.color}}</p>
+                    <h6> ₹{{product.total_price}}</h6>
                 </div>
                 <div class="col-1" style="padding: 5px;">
                     <a class="del" styleClass="p-button-link"><i class="pi pi-trash"></i></a>
@@ -35,6 +41,7 @@
                     <div class="col-6"><h5>Total Amount</h5> </div>
                     <div class="col-6"><p>₹<span></span>1000</p></div>
                 </div>
+            <button class="btn btn-warning">BUY NOW</button>
         </div>
     </div>
 </div>

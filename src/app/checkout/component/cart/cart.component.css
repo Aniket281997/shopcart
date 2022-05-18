@@ -13,6 +13,21 @@
 .payment{
     padding: 10px;
     background-color: rgba(221, 221, 221, 0.1);
+    height: 290px;
+    position: sticky;
+    top: 10px;
+}
+.btn-warning{
+    background: none #f7810a;
+    width: 42%;
+    color: #ffffff;
+    fill: #ffffff;
+    border: none;
+    border-radius: 0px;
+    padding: 13px;
+    margin: 12px;
+    text-decoration: none;
+    box-shadow: -1px 6px 19px rgb(247 129 10 / 25%);
 }
 .border{
     border: 1px solid #ddd;
@@ -56,3 +71,32 @@ h6{
     color: rgba(0, 0, 0, 0.5);  
     font-size: 20px;
 }
+
+/* qty */
+.button {
+	padding: 0;
+	margin: 0;
+	border-style: none;
+	touch-action: manipulation;
+	display: inline-block;
+	border: none;
+	background: none;
+	cursor: pointer;
+}
+.qty {
+	display: flex;
+	}
+input {	
+	text-align: center
+}
+button {
+	width: 1.7rem;
+	color: #fff;
+	background: gray;
+}
+button.qtyminus {
+	margin-right: 0.3rem;
+}
+button.qtyplus {
+	margin-left: 0.3rem;
+} 

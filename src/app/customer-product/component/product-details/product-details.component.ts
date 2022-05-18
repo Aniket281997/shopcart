@@ -64,7 +64,8 @@ export class ProductDetailsComponent implements OnInit {
         size:obj.product_size,
         color:obj.product_color,
         price:obj.product_price,
-        qty:1
+        qty:1,
+        total_price:obj.product_price
       });
     this.service.postCart(this.addCart).subscribe((res:any)=>{  
       this.ngtoast.success({detail:"SUCCESS",summary:'Added to cart',duration:2000});
